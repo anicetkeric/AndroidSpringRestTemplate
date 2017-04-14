@@ -8,7 +8,7 @@ The Spring for Android project supports the usage of the Spring Framework in an 
 
 This example, we will use the service rest  online [JSONPlaceholder](https://jsonplaceholder.typicode.com/). 
 
-## Add dependencies
+## Add dependencies in gradle file
 
 ```java
 apply plugin: 'android'
