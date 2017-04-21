@@ -46,3 +46,9 @@ dependencies {
 }
 
 ```
+### AndroidManifest.xml
+Add the INTERNET permission so the application can access resources over the internet.
+```xml
+ <uses-permission android:name="android.permission.INTERNET" />
+
+```
