@@ -54,3 +54,53 @@ Add the INTERNET permission so the application can access resources over the int
 ```
 ### Create JSONParser.class
 
+```java
+public class JSONParser {
+
+
+    public static ArrayList<Post> PostList = new ArrayList<>();
+
+    public static Post parsePost(JSONObject obj) {
+
+        try {
+            Post p = new Post();
+            p.setId(Integer.parseInt(obj.getString("id")));
+            p.setTitie(obj.getString("title"));
+            p.setBody(obj.getString("body"));
+            p.setUserId(Integer.parseInt(obj.getString("userId")));
+
+            return p;
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+            return null;
+        }
+    }
+
+
+    public static ArrayList<Post> parseArrayPost(JSONArray arr) {
+        JSONObject obj=null;
+        Post p = null;
+        PostList.clear();
+        try {
+
+            for(int i = 0;i<arr.length();i++) {
+                obj = arr.getJSONObject(i);
+                p= new Post();
+                p.setId(Integer.parseInt(obj.getString("id")));
+                p.setTitie(obj.getString("title"));
+                p.setBody(obj.getString("body"));
+                p.setUserId(Integer.parseInt(obj.getString("userId")));
+                PostList.add(p);
+            }
+            return PostList;
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+            return null;
+        }
+    }
+
+
+
+
+}
+```
